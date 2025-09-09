@@ -58,7 +58,7 @@ def check_word_in_url(url, word, phone_number, message_text):
                 phone_no=phone_number,
                 message=message_text,
                 time_hour=send_hour,
-                time_minute=send_minute
+                time_min=send_minute
             )
             print("📲 WhatsApp notification scheduled!")
 
@@ -68,13 +68,13 @@ def check_word_in_url(url, word, phone_number, message_text):
             return False
 
     except requests.exceptions.Timeout:
-        print("⚠️ Timeout Error: Request took too long. example might be slow or blocking requests.")
+        print("⚠️ Timeout Error: Request took too long. example.com might be slow or blocking requests.")
         return False
     except requests.exceptions.ConnectionError:
-        print("⚠️ Connection Error: Unable to connect to Myntra. Check your internet connection.")
+        print("⚠️ Connection Error: Unable to connect to example.com. Check your internet connection.")
         return False
     except requests.exceptions.HTTPError as e:
-        print(f"⚠️ HTTP Error: {e}. Myntra might be blocking automated requests.")
+        print(f"⚠️ HTTP Error: {e}. example.com might be blocking automated requests.")
         return False
     except Exception as e:
         print("⚠️ Unexpected Error:", e)
